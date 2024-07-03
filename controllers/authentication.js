@@ -77,7 +77,7 @@ const checkAuthHandler = async (req, res) => {
 
 const logoutHandler = async (req, res) => {
   try {
-    res.clearCookie("token");
+    res.clearCookie("token",{ sameSite: 'None', secure: true });
     return res.status(200).json({ ok: true, message: "Logout Successfully" });
   } catch (error) {
     return res
