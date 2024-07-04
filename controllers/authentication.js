@@ -49,7 +49,6 @@ const signInHandler = async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: 'None',
-      domain: 'url-shortener-backend-kohl.vercel.app',
       maxAge: 3600000,
       expires : new Date(Date.now() + 3600000)
     });
