@@ -9,6 +9,13 @@ const UserRoute = require("./routers/user");
 const urlModel = require("./models/urlSchema");
 
 require("dotenv").config();
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", process.env.BASE_URL);
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
 app.use(bodyParser.json());
 app.use(express.json());
 
@@ -21,6 +28,7 @@ app.use(
 app.use(cookieParser());
 
 require("./db");
+
 app.get("/", (req, res) => {
   return res.status(200).json({ message: "success" });
 });
