@@ -48,7 +48,7 @@ const signInHandler = async (req, res) => {
     res.cookie("token", token, {
       httpOnly: true,
       secure: true,
-      sameSite: 'None',
+      sameSite: 'Lax',
       expires : new Date(Date.now() + 3600000)
     });
     return res.status(200).json({
