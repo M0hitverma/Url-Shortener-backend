@@ -49,6 +49,8 @@ const signInHandler = async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: 'None',
+      domain: '.vercel.app',
+      maxAge: 3600000,
       expires : new Date(Date.now() + 3600000)
     });
     return res.status(200).json({
