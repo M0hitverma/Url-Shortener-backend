@@ -52,6 +52,8 @@ const signInHandler = async (req, res) => {
       maxAge: 3600000,
       expires : new Date(Date.now() + 3600000)
     });
+    res.setHeader('Authorization',`Bearer ${token}`);
+    res.setHeader('Access-Control-Expose-Headers','Authorization');
     return res.status(200).json({
       ok: true,
       message: "Login Successfully",

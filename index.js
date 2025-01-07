@@ -23,6 +23,8 @@ app.use(
   cors({
     origin: process.env.BASE_URL,
     credentials: true,
+    allowedHeaders: "Content-Type,Authorization",
+    exposedHeaders: "Authorization",
   })
 );
 app.use(cookieParser());
