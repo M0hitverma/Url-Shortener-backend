@@ -54,7 +54,7 @@ app.get("/:id", async (req, res) => {
   if (!urlobj) {
     return res.status(400).json({ ok: false, message: "bad request" });
   }
-  const originalURL = `https://${urlobj.originalUrl}`;
+  const originalURL = `${urlobj.originalUrl}`;
 
   return res.redirect(originalURL);
 });
